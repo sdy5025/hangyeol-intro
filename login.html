@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한결 | 로그인</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="page">
+    <div class="card auth-card">
+      <h1 style="font-size: 28px;">로그인</h1>
+      <p class="lead" id="auth-lead" style="margin-bottom: 24px;">가입한 이메일로 로그인하거나 새 계정을 만들어 주세요.</p>
+
+      <div id="setup-box" class="setup-box hidden">
+        <p style="margin-bottom: 12px;"><strong>Supabase 연결이 필요합니다.</strong> 프로젝트 URL과 anon public 키를 입력하세요. 테이블은 <code>supabase/schema.sql</code>을 SQL Editor에서 실행하면 됩니다.</p>
+        <form id="setup-form">
+          <label>
+            Project URL
+            <input type="url" id="setup-url" placeholder="https://xxxx.supabase.co" required>
+          </label>
+          <label>
+            anon public key
+            <input type="text" id="setup-key" placeholder="eyJ..." required>
+          </label>
+          <button type="submit" class="btn-block">연결 저장</button>
+        </form>
+      </div>
+
+      <div id="notice" class="notice hidden"></div>
+
+      <div class="auth-tabs">
+        <button type="button" id="tab-login" class="is-active">로그인</button>
+        <button type="button" id="tab-signup">회원가입</button>
+      </div>
+
+      <form id="login-form">
+        <label>
+          이메일
+          <input type="email" id="login-email" required>
+        </label>
+        <label>
+          비밀번호
+          <input type="password" id="login-password" minlength="6" required>
+        </label>
+        <button type="submit" class="btn-block">로그인</button>
+      </form>
+
+      <form id="signup-form" class="hidden">
+        <label>
+          이름
+          <input type="text" id="signup-name" required>
+        </label>
+        <label>
+          이메일
+          <input type="email" id="signup-email" required>
+        </label>
+        <label>
+          비밀번호 (6자 이상)
+          <input type="password" id="signup-password" minlength="6" required>
+        </label>
+        <button type="submit" class="btn-block">회원가입</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 한결. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

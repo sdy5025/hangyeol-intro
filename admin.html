@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한결 | 관리자</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="page">
+    <div id="login-view" class="hidden">
+      <div class="card auth-card">
+        <h1 style="font-size: 28px;">관리자 로그인</h1>
+        <p class="lead" style="margin-bottom: 24px;">관리자로 지정된 계정만 들어올 수 있습니다.</p>
+        <div id="login-notice" class="notice hidden"></div>
+        <form id="admin-login-form">
+          <label>
+            이메일
+            <input type="email" id="admin-email" required>
+          </label>
+          <label>
+            비밀번호
+            <input type="password" id="admin-password" minlength="6" required>
+          </label>
+          <button type="submit" class="btn-block">관리자 로그인</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="denied-view" class="hidden">
+      <div class="card admin-denied">
+        <h1 style="font-size: 28px;">접근 권한이 없습니다</h1>
+        <p class="lead" style="margin: 0 auto 24px;">이 페이지는 관리자 계정만 이용할 수 있습니다.</p>
+        <a class="btn" href="index.html">홈으로</a>
+      </div>
+    </div>
+
+    <div id="dashboard-view" class="hidden">
+      <div class="page-head">
+        <div>
+          <h1 style="font-size: 32px;">관리자</h1>
+          <p class="lead">게시글에 답글을 달거나 글을 삭제할 수 있습니다.</p>
+        </div>
+      </div>
+      <div id="dash-notice" class="notice hidden"></div>
+      <div id="admin-posts" class="post-list"></div>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 한결. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
